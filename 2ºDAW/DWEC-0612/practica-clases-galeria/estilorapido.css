@@ -1,0 +1,7 @@
+.img-fluid{
+    max-width: 500px !important;
+    max-height: 500px !important;
+    border-color: black;
+    border-radius: 10%;
+    margin: 50px;
+}

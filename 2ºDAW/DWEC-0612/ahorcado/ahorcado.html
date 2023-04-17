@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      window.alert("BIENVENIDO AL JUEGO DEL AHORCADO (mira la consola para jugar)");
+      window.alert("Tienes 6 oportunidades, introduce las letras en MAYÚSCULAS, introduce 0 para salir");
+      const palabras = [
+        "AMARGURA","FRESCO","LENTO","PILOTO","DIEZ"
+      ]
+      //Vector con una palabra aleatoria de las posibles
+      let palabraSolucion = getPalabraAleatoria();
+
+      //array para recordar al usuario las letras ya usadas
+      let respuestas = [];
+      //array con la palabraPregunta (2 letras y el resto espacios).
+      let palabraPregunta = getArrayPregunta(palabraSolucion);
+      palabraSolucion = palabraSolucion.split("");
+      console.log("PALABRA PREGUNTA " + palabraPregunta);
+      console.log("LETRAS YA USADAS " + respuestas);
+      //variable para la introducción de datos
+      let input;
+      //variable con el número de oportundiades
+      let oportunidades = 6;
+
+      //bucle principal de juego
+      while (input != 0 && oportunidades>0){
+        input = prompt("Introduce una letra en mayúsculas");
+
+        if (input == 0){
+            console.log("la palabra era: " + palabraSolucion);
+            break;
+          }else if(evaluaYresuelve(input)){
+            console.log("ACERTASTE"); 
+            console.log("Letras usadas: " + respuestas);
+            console.log(palabraPregunta);
+            if(hasGanado()){
+              console.log("Ehorabuena, la palabra era: " + palabraSolucion);
+              break;
+            }
+          }else{
+            console.log("NO ACERTASTE");
+            respuestas.push(input);
+            console.log("Letras usadas: " + respuestas);
+            console.log(palabraPregunta);
+            oportunidades--;
+          }
+          console.log("Oportunidades restantes = " + oportunidades);
+      }
+
+      //método RESUELVE que compara el arraySolucion, con el arrayRespuestas y devuelve el ArrayPregunta
+      //devuelve true si la letra está en la palabra, false si ya no tanto. 
+      //Si la letra está en la palabra resuelve
+      function evaluaYresuelve(letra) {
+        let encontrada = false;
+        for (let i = 0; i < palabraSolucion.length; i++) {
+          if (letra == palabraSolucion[i]) {
+            palabraPregunta[i] = palabraSolucion[i];
+            encontrada = true;
+          }
+        }
+        return encontrada;
+      }
+
+      //función que evalua si la partida ha temrinado porque el usuarie ha gando
+      function hasGanado() {
+        let siGanaste = true;
+        for(let j = 0; j<palabraPregunta.length; j++){
+          if(palabraPregunta[j] != palabraSolucion[j]){
+            siGanaste = false;
+          }
+        }
+        return siGanaste;
+      }
+
+      function getPalabraAleatoria(){
+          return palabras[Math.floor(Math.random()*palabras.length)];
+      }
+
+      function getArrayPregunta(a){
+        //Caracteres individuales en array
+        var palabraSplit = a.split("");
+        //Se elijen dos caracteres al azar
+        let letraA = palabraSplit[Math.floor(Math.random()*palabraSplit.length)];
+        let letraB = palabraSplit[Math.floor(Math.random()*palabraSplit.length)];
+        //Toda letra que no sea letraA o letraB se sustitye por "-"
+        for (let i = 0; i < palabraSplit.length; i++){
+          if(palabraSplit[i] != letraA ){
+            if(palabraSplit[i] != letraB){
+              palabraSplit[i] = "-"
+            }
+          }
+        }
+        return palabraSplit;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRÁCTICA CLASES GALERÍA</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- css style-->
+    <link rel="stylesheet" href="estilorapido.css">
+    <!-- data structure -->
+    <script src="data-structure.js"></script>
+    <!-- tests and objects -->
+    <script src="tests-and-objects.js"></script>
+</head>
+<body>
+    <!-- Page tittle -->
+    <h1>Prácica clases | Gestor de imágenes </h1>
+    <p> Santiago Alarcón </p>
+    <!-- Gallery tittle-->
+    <!-- Buttons for funcionalities -->
+    <button type = "button" class = "btn btn-primary m-1" onclick="add_image()">Add new image</button>
+    <button type = "button" class = "btn btn-primary m-1" onclick="delete_image()">Remove image</button>
+    <button type = "button" class = "btn btn-primary m-1" onclick="add_author()">Add new author</button>
+    <button type = "button" class = "btn btn-primary m-1" onclick="delete_author()">Remove author</button>
+    <button type = "button" class = "btn btn-primary m-1" onclick="add_category()">Add new category</button>
+    <button type = "button" class = "btn btn-primary m-1" onclick="delete_category()">Remove category</button>
+    <button type = "button" class = "btn btn-info m-1" onclick="authors_view()">Authors view</button>
+    <button type = "button" class = "btn btn-info m-1" onclick="categories_view()">Categories view</button>
+    <button type = "button" class = "btn btn-info m-1" onclick="link_image_category()">Hashtag image</button>
+    <button type = "button" class = "btn btn-warning m-1" onclick="test_console()">Test in console</button>
+
+    <!--Managed by save-and-retrieve-json.js-->
+    <label>Upload json:</label>
+    <input type="file" id="myFile" disabled="true">
+    <!-- Gallery -->
+    <!-- max_elements = 50 -->   
+    <script src="gallery.js"></script>
+    <!-- Functionality-->
+    <script src="buttons-functionality.js"></script>
+    <!-- Save to json functionality -->
+    <script src="save-and-retrieve-json.js"></script>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</body>
+</html>

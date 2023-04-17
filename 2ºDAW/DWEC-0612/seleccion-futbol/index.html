@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/seleccion.js"></script>
+  </head>
+  <body>
+    <!-- Presentación -->
+    <h1>practica_objetos_propios</h1>
+    <p>
+      Abstract: hay objetos de distintos tipos almacenados en un array y se van
+      a hacer sets de esos objetos que serán mostrados en diferentes vistas. El estado
+      de los objetos se puede manejar mediante botones en la tabla inferior.
+    </p>
+    <p>Santi | Asignatura DWEC</p>
+    <!-- Pruebas 
+    <button id="boton_ejemplo" onclick="mostrar()">Ejemplo</button>
+    <br />
+    <br />
+    <button id="boton_volver" onClick="borrar()" style="visibility: hidden">
+      Volver
+    </button>
+    -->
+
+    <button id="boton_convocar" onclick="cargar_db()">Inicio</button>
+    <button id="boton_volver" onClick="volver()" style="visibility: hidden">
+      Volver
+    </button>
+<!-- quien viaja , Concentrar al azar, Equipo tecnico para partidos, Fisioterapia -->
+    <button id="boton_concentrar_azar" onClick="concentrar_azar()" style="visibility: hidden">
+      Concentrar al azar
+    </button>
+    <button id="boton_11_ganador_azar" onClick="jugar_11()" style="visibility: hidden">
+      11 jugador·s al azar
+    </button>
+    <button id="boton_jugadors_que_necesitan_masaje" onClick="fisioterapia()" style="visibility: hidden">
+      Fisioterapia
+    </button>
+    <button id="boton_equipo_tecnico" onClick="vista_equipo_tecnico()" style="visibility: hidden">
+      Equipo técnico para partidos
+    </button>
+    <button id="boton_quien_viaja" onClick="vista_viajeros()" style="visibility: hidden">
+      ¿quién viaja?
+    </button>
+
+    <h2 id="titulo_vista"></h2>
+    <div id="vista"></div>
+
+    <br>
+    <br>
+  
+
+  </body>
+</html>
